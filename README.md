@@ -1,4 +1,4 @@
-# words
+# Words
 
 #### Words is a simple program that uses the WordsAPI to generate information about English words.
 #### You can search for definitions, use examples, rhyming words, synonyms, antonyms, syllable count, frequency and pronounciation.
