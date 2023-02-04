@@ -33,15 +33,23 @@ function App() {
   const [syllables, setSyllables] = useState('')
   const [frequency, setfFequency] = useState('')
   const [pronunciation, setPronunciation] = useState('')
+
+  const searchDifferentOption = (parameter) => {
+    setSearchParameter(parameter)
+  }
+
+  useEffect(() => {
+    fetchWord()
+  }, [searchParameter])
   
   const url = 'https://wordsapiv1.p.rapidapi.com/words/' + searchQuery + '/' + searchParameter
 
   const [alert, setAlert] = useState(false)
   const [settings, setSettings] = useState(false)
+
   const closeWordDetails = () => setWordDetails(false)
   const showSettingsPanel = () => {
     setSettings(!settings)
-    setWordDetails(false)
   }
   
   const fetchWord = () => {
@@ -54,7 +62,6 @@ function App() {
       .then(data => setData(data))
       .catch(err => console.error(err)); 
       setWordDetails(true)
-      setSettings(false)
       }
   }
 
@@ -69,8 +76,6 @@ function App() {
     setfFequency(data.frequency)
     setPronunciation(data.pronunciation)
   }, [data])
-
-  console.log(syllables)
 
   const [about, setAbout] = useState(false)
   const showAboutSection = () => setAbout(true)
@@ -147,9 +152,9 @@ function App() {
       </div>
 
       <OptionsButtons 
-        setSearchParameter={setSearchParameter}
         settings={settings}
         searchParameter={searchParameter}
+        searchDifferentOption={searchDifferentOption}
       />
 
       <About

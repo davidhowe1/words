@@ -1,42 +1,42 @@
 import React from 'react'
 import { Info } from 'react-feather'
 
-function OptionsButtons({ settings, setSearchParameter, searchParameter }) {
+function OptionsButtons({ settings, searchParameter, searchDifferentOption }) {
 
 
   return (
       <div className={settings ? 'options-button-container active' : 'options-button-container'}>
         <div>
           <button
-          onClick={() => setSearchParameter('definitions')} 
+          onClick={() => searchDifferentOption('definitions')} 
           className={searchParameter === 'definitions' ? 'option active' : 'option'}>Definitions</button>
 
           <button
-          onClick={() => setSearchParameter('examples')} 
+          onClick={() => searchDifferentOption('examples')} 
           className={searchParameter === 'examples' ? 'option active' : 'option'}>Examples</button>
 
           <button
-          onClick={() => setSearchParameter('rhymes')} 
+          onClick={() => searchDifferentOption('rhymes')} 
           className={searchParameter === 'rhymes' ? 'option active' : 'option'}>Rhymes</button>
 
           <button
-          onClick={() => setSearchParameter('synonyms')} 
+          onClick={() => searchDifferentOption('synonyms')} 
           className={searchParameter === 'synonyms' ? 'option active' : 'option'}>Synonyms</button>
 
           <button
-          onClick={() => setSearchParameter('antonyms')} 
+          onClick={() => searchDifferentOption('antonyms')} 
           className={searchParameter === 'antonyms' ? 'option active' : 'option'}>Antonyms</button>
 
           <button
-          onClick={() => setSearchParameter('syllables')} 
+          onClick={() => searchDifferentOption('syllables')} 
           className={searchParameter === 'syllables' ? 'option active' : 'option'}>syllables</button>
 
           <button
-          onClick={() => setSearchParameter('frequency')} 
+          onClick={() => searchDifferentOption('frequency')} 
           className={searchParameter === 'frequency' ? 'option active' : 'option'}>Frequency</button>
 
           <button
-          onClick={() => setSearchParameter('pronunciation')} 
+          onClick={() => searchDifferentOption('pronunciation')} 
           className={searchParameter === 'pronunciation' ? 'option active' : 'option'}>Pronunciation</button>
         </div>
 

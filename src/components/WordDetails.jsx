@@ -8,7 +8,7 @@ function WordDetails({ data, word, definitions, examples, closeWordDetails,
       console.log()
     }, [data])
 
-    const searchParameterTitle = searchParameter.charAt(0).toUpperCase() + searchParameter.slice(1)
+    // const searchParameterTitle = searchParameter.charAt(0).toUpperCase() + searchParameter.slice(1)
   
   return (
     <div className='word-details'>
@@ -17,7 +17,7 @@ function WordDetails({ data, word, definitions, examples, closeWordDetails,
       </div>
 
       <h1>{word}</h1>
-      <h2>{searchParameterTitle}:</h2>
+      <h2>{searchParameter}:</h2>
       <div className='search-results'>
           {definitions ? definitions.map((item, index) => (
               <div className='search-result' key={index}>
@@ -66,7 +66,7 @@ function WordDetails({ data, word, definitions, examples, closeWordDetails,
 
               <div className='frequency-stats'>
                 <div 
-                  title='A score indicating how common the word is in the English language, with a range of 1 to 7.' 
+                  title='0-1 scale the shows the likelyhood of the word appearing in an English document that is part of a corpus.' 
                   className='search-result antonyms'>
                   <h3>Diversity: {frequency.diversity}</h3>
                 </div> 
@@ -78,7 +78,7 @@ function WordDetails({ data, word, definitions, examples, closeWordDetails,
                 </div> 
 
                 <div
-                  title='0-1 scale the shows the likelyhood of the word appearing in an English document that is part of a corpus.' 
+                  title='A score indicating how common the word is in the English language, with a range of 1 to 7.' 
                   className='search-result antonyms'>
                   <h3>Zipf: {frequency.zipf}</h3>
                 </div>
